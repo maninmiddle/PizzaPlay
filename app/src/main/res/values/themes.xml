@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.PizzaPlay" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:colorAccent">@color/colorAccent</item>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorBackground</item>
+        <item name="android:colorControlNormal">@color/colorWhite</item>
+        <item name="android:colorControlActivated">@color/colorWhite</item>
+        <item name="android:colorControlHighlight">@color/colorWhite</item>
+        <item name="android:fontFamily">@font/regular</item>
+
+    </style>
+
+
+    <style name="TextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/input_stroke</item>
+    </style>
+</resources>
