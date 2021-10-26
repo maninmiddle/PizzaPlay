@@ -5,4 +5,6 @@ data class PizzaModel(
     var info: String,
     var photo: String,
     var price: String
-)
+) {
+    var isAnimated: Boolean = false
+}

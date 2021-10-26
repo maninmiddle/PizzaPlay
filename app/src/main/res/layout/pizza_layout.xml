@@ -50,27 +50,19 @@
             app:layout_constraintTop_toTopOf="@id/pizzaName" />
 
 
-        <TextView
-            android:id="@+id/pizzaPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:text="@string/temp_price"
-            android:textColor="@color/colorWhite"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:text="@string/plus"
+            android:textColor="@color/colorWhite"
             app:cornerRadius="20dp"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

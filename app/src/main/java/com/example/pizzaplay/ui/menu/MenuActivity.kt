@@ -3,8 +3,6 @@ package com.example.pizzaplay.ui.menu
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import com.example.pizzaplay.R
 import com.example.pizzaplay.api.Api
 import com.example.pizzaplay.base.BaseActivity
@@ -32,6 +30,7 @@ class MenuActivity : BaseActivity() {
 
         binding.bottomNav.itemIconTintList = null
 
+
         val menuFragment = MenuFragment()
         val categoryFragment = CategoryFragment()
         val basketFragment = BasketFragment()
@@ -58,7 +57,7 @@ class MenuActivity : BaseActivity() {
                     call: Call<List<PizzaModel>>,
                     response: Response<List<PizzaModel>>
                 ) {
-                    if (response.body() != null ) {
+                    if (response.body() != null) {
                         liveDataModel.pizzas.value = response.body()
                     }
                 }
