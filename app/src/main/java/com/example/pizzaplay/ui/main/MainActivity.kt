@@ -42,39 +42,62 @@ class MainActivity : BaseActivity() {
                     }
 
                     private fun loginAccount() {
-                        startActivityWithFinish(MenuActivity::class.java, false)
-                        getSharedPreferences("data", MODE_PRIVATE)
-                            .edit()
-                            .putString("username", binding.etUsername.text.toString())
-                            .apply()
+                        val username = binding.etUsername.text
+                        val password = binding.etPassword.text
+
+                        when {
+                            username.isNullOrEmpty() -> binding.etUsername.error =
+                                getString(R.string.typeUser)
+                            password.isNullOrEmpty() -> binding.etPassword.error =
+                                getString(R.string.typePassword)
+                            else -> {
+                                startActivityWithFinish(MenuActivity::class.java, false)
+                                getSharedPreferences("data", MODE_PRIVATE)
+                                    .edit()
+                                    .putString("username", binding.etUsername.text.toString())
+                                    .apply()
+                            }
+                        }
                     }
 
                     private fun createAccount() {
-                        val userInfo = UserModel(
-                            binding.etUsername.text.toString(),
-                            binding.etPassword.text.toString(),
-                            1
-                        )
+                        val username = binding.etUsername.text
+                        val password = binding.etPassword.text
 
-                        getSharedPreferences("data", MODE_PRIVATE)
-                            .edit()
-                            .putString("username", binding.etUsername.text.toString())
-                            .apply()
+                        when {
+                            username.isNullOrEmpty() -> binding.etUsername.error =
+                                getString(R.string.typeUser)
+                            password.isNullOrEmpty() -> binding.etPassword.error =
+                                getString(R.string.typePassword)
+                            else -> {
+                                val userInfo = UserModel(
+                                    binding.etUsername.text.toString(),
+                                    binding.etPassword.text.toString(),
+                                    1
+                                )
 
-                        Api.apiMethods.createUser(userInfo)
-                            .enqueue(object : Callback<String> {
-                                override fun onResponse(
-                                    call: Call<String>,
-                                    response: Response<String>
-                                ) {
-                                    startActivityWithFinish(MenuActivity::class.java, false)
-                                }
+                                getSharedPreferences("data", MODE_PRIVATE)
+                                    .edit()
+                                    .putString("username", binding.etUsername.text.toString())
+                                    .apply()
 
-                                override fun onFailure(call: Call<String>, t: Throwable) {
-                                    t.printStackTrace()
-                                }
+                                Api.apiMethods.createUser(userInfo)
+                                    .enqueue(object : Callback<String> {
+                                        override fun onResponse(
+                                            call: Call<String>,
+                                            response: Response<String>
+                                        ) {
+                                            startActivityWithFinish(MenuActivity::class.java, false)
+                                        }
 
-                            })
+                                        override fun onFailure(call: Call<String>, t: Throwable) {
+                                            t.printStackTrace()
+                                        }
+
+                                    })
+                            }
+                        }
+
 
                     }
 

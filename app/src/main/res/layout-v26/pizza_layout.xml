@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="120dp"
+            android:autoSizeTextType="uniform"
             android:text="sadffdsafdassfdasfdasdafsda"
             android:textColor="@color/colorWhite"
             android:textSize="15sp"

@@ -15,4 +15,6 @@
     <string name="temp_price">От 9 рублей</string>
     <string name="plus">+</string>
     <string name="temp_desc">sadfsfdasdfasdasdfsdafsdafasdfsdafafdafasdsadfsdafsadfdsadsafdsafdsafdsafsdaasdfasdfa</string>
+    <string name="typeUser">Введите имя пользователя</string>
+    <string name="typePassword">Введите пароль</string>
 </resources>
