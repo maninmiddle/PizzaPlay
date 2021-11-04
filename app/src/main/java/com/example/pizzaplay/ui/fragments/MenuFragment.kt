@@ -1,29 +1,24 @@
 package com.example.pizzaplay.ui.fragments
 
-import android.content.Context
+import CurrentLiveModel
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.pizzaplay.adapters.PizzasAdapter
-import com.example.pizzaplay.api.Api
 import com.example.pizzaplay.databinding.FragmentMenuBinding
 import com.example.pizzaplay.model.LiveDataModel
 import com.example.pizzaplay.model.PizzaModel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MenuFragment : Fragment() {
     lateinit var binding: FragmentMenuBinding
     private var pizzaList: MutableList<PizzaModel> = ArrayList()
     private val liveDataModel: LiveDataModel by activityViewModels()
+    private val currentLiveModel: CurrentLiveModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -46,7 +41,7 @@ class MenuFragment : Fragment() {
         binding.rvLayout.apply {
             layoutManager = GridLayoutManager(context, 2)
 
-            adapter = PizzasAdapter(context, pizzaList)
+            adapter = PizzasAdapter(context, pizzaList, currentLiveModel)
         }
 
     }

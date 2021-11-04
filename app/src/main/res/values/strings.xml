@@ -17,4 +17,15 @@
     <string name="temp_desc">sadfsfdasdfasdasdfsdafsdafasdfsdafafdafasdsadfsdafsadfdsadsafdsafdsafdsafsdaasdfasdfa</string>
     <string name="typeUser">Введите имя пользователя</string>
     <string name="typePassword">Введите пароль</string>
+    <string name="luck">Купон на скидку</string>
+    <string name="not_load">username</string>
+    <string name="profile">Профиль</string>
+    <string name="nol">0</string>
+    <string name="pizza_name">Pizza name</string>
+    <string name="delete_in">убрать ингредиенты</string>
+    <string name="to_basket">В корзину</string>
+    <string name="kol_zakazov">Количество заказов</string>
+    <string name="status">Статус</string>
+    <string name="simple_status">Новичок</string>
+    <string name="example">sadffdsafdassfdasfdasdafsda</string>
 </resources>

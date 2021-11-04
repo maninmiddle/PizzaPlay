@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/something"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+
+    <ImageView
+        android:id="@+id/rivPizza"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/pizza_colored"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pizzaName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="200dp"
+        android:text="@string/pizza_name"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rivPizza" />
+
+    <TextView
+        android:id="@+id/pizzaDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:maxEms="20"
+        android:text="@string/temp_desc"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/pizzaName" />
+
+    <TextView
+        android:id="@+id/delete_ingredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:text="@string/delete_in"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="@id/pizzaDesc"
+        app:layout_constraintTop_toTopOf="@id/pizzaDesc" />
+
+    <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
+        android:id="@+id/toggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        app:justifyContent="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/pizzaDesc"
+        app:toggle_requiredAmount="1"
+        app:toggle_selectableAmount="1">
+
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            app:toggle_selectedBackgroundColor="@color/colorAccent"
+            app:toggle_text="Маленькая" />
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            app:toggle_selectedBackgroundColor="@color/colorAccent"
+            app:toggle_text="Средняя" />
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            app:toggle_selectedBackgroundColor="@color/colorAccent"
+            app:toggle_text="Большая" />
+    </nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/luck"
+        style="@style/TextInputStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="@string/luck"
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="80dp"
+        android:textColorHint="@color/colorGrey"
+        app:hintTextColor="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toggle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="50"
+            android:maxLines="1"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/add"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/to_basket"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/luck"
+        app:layout_constraintEnd_toEndOf="@id/luck"
+        app:layout_constraintStart_toStartOf="@id/luck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
